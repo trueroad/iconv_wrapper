@@ -22,3 +22,6 @@ stamp-h1
 *.exe
 advanced-sample
 simple-sample
+config.guess
+config.rpath
+config.sub
