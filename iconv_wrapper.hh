@@ -1,5 +1,5 @@
 //
-// One header file iconv wrapper for C++11 2016-10-19.20
+// One header file iconv wrapper for C++11 2016-10-19.22
 // https://github.com/trueroad/iconv_wrapper/
 //
 // Copyright (C) 2016 Masamichi Hosoda. All rights reserved.
@@ -80,6 +80,29 @@ namespace iconv_wrapper
     iconv& operator = (iconv &&) = default;
 
   private:
+    // Internal class
+    // There is two different implements for the second argument of iconv ().
+    //   `const char**' and `char **'
+    // This class is for automatic type cast switching.
+    class iconv_const_cast
+    {
+    public:
+      iconv_const_cast (const char **in) noexcept:
+        t (in)
+      {
+      }
+      operator char** () const noexcept
+      {
+        return const_cast<char**>(t);
+      }
+      operator const char ** () const noexcept
+      {
+        return t;
+      }
+    private:
+      const char ** t;
+    };
+
     // Internal function
     void do_iconv (std::string *pout, const char *inbuf, size_t *pinleft,
                    std::string::size_type *pinpos = nullptr);
@@ -164,13 +187,13 @@ namespace iconv_wrapper
       {
         pout->resize (1);
       }
-    char *inbuf_tmp {const_cast<char*>(inbuf)};
+    const char *inbuf_tmp {inbuf};
     char *outbuf {&pout->at (0)};
     size_t outleft {pout->size ()};
     size_t s;
 
     while ((s = ::iconv (convdesc,
-                         &inbuf_tmp, pinleft,
+                         iconv_const_cast(&inbuf_tmp), pinleft,
                          &outbuf, &outleft)) == static_cast<size_t>(-1))
       {
         if (errno != E2BIG)
