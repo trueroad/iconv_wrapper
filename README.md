@@ -1,4 +1,11 @@
+<!-- -*- coding: utf-8 -*- -->
 # One header file *iconv wrapper* for C++11
+
+[ [Japanese (日本語)](./README.ja.md) / English ]
+
+[
+https://github.com/trueroad/iconv_wrapper
+](https://github.com/trueroad/iconv_wrapper)
 
 *iconv wrapper* is a iconv wrapper for C++11.
 It consists of only one header file.

@@ -1,6 +1,12 @@
 <!-- -*- coding: utf-8 -*- -->
 # One header file *iconv wrapper* for C++11
 
+[ Japanese (日本語) / [English](./README.md) ]
+
+[
+https://github.com/trueroad/iconv_wrapper
+](https://github.com/trueroad/iconv_wrapper)
+
 *iconv wrapper* は C++11 用の iconv ラッパーです。
 ヘッダファイル一つだけでできていますので、簡単に使えます。
 
