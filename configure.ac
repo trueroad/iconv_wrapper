@@ -3,8 +3,8 @@
 
 AC_PREREQ([2.69])
 AC_INIT([One header file iconv wrapper for C++11],
-    [2016-10-18.23], , [iconv_wrapper],
-    [https://github.com/trueroad/iconv_wrapper/])
+    [2019-11-17.12], , [iconv_wrapper],
+    [https://github.com/trueroad/iconv_wrapper])
 AM_INIT_AUTOMAKE([foreign])
 AC_CONFIG_SRCDIR([advanced-sample.cc])
 AC_CONFIG_HEADERS([config.h])
