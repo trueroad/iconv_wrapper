@@ -160,7 +160,10 @@ namespace iconv_wrapper
                                       std::string *pout)
   {
     size_t inleft {in.size ()};
-    do_iconv (pout, &in.at (0), &inleft, pinpos);
+    if (inleft)
+      do_iconv (pout, &in.at (0), &inleft, pinpos);
+    else
+      pout->clear();
     return *pout;
   }
 
