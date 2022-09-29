@@ -1,8 +1,8 @@
 //
-// One header file iconv wrapper for C++11 2019-11-17.12
+// One header file iconv wrapper for C++11 2022-09-29.12
 // https://github.com/trueroad/iconv_wrapper
 //
-// Copyright (C) 2016, 2019 Masamichi Hosoda. All rights reserved.
+// Copyright (C) 2016, 2019, 2022 Masamichi Hosoda. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions
