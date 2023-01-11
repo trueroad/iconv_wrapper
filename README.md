@@ -206,7 +206,7 @@ Reset conversion state.
 
 ## License
 
-Copyright (C) 2016, 2019, 2022 Masamichi Hosoda. All rights reserved.
+Copyright (C) 2016, 2019, 2022, 2023 Masamichi Hosoda. All rights reserved.
 
 License: BSD-2-Clause
 
