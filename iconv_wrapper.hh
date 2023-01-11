@@ -128,7 +128,7 @@ namespace iconv_wrapper
   inline void iconv::open (const std::string &fromcode,
                            const std::string &tocode)
   {
-    if (convdesc == invalid_cd)
+    if (convdesc != invalid_cd)
       {
         close ();
       }
